@@ -19,7 +19,8 @@ def quickSort(array, low, high):
     quickSort(array, p, high)
 
 
-arr = [69, 10, 30, 2, 16, 8, 31, 22]
+# arr = [69, 10, 30, 2, 16, 8, 31, 22]
+arr = [3, 3, 8, 3, 2, 9, 3, 1]
 print('정렬 전  :', arr)
 quickSort(arr, 0, len(arr) - 1)
 print('정렬 후  :', arr)

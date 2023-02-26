@@ -22,7 +22,7 @@ def quickSort(array, low, high):
 
 
 for _ in range(50):
-  arr = [randint(10, 90) for _ in range(8)]
+  arr = [randint(0, 10) for _ in range(8)]
   print('정렬 전  :', arr)
   quickSort(arr, 0, len(arr) - 1)
   print('정렬 후  :', arr, arr == sorted(arr))

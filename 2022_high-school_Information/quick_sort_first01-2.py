@@ -7,8 +7,9 @@ def quick_sort(arr, start, end):
     low, high = start + 1, end      # low, high 지정
 
     while low <= high:      # low와 high가 교차할 때까지 반복
-        while low <= end and arr[low] <= pivot: low += 1       # pivot 보다 큰 값 찾기
-        while low <= end and arr[high] > pivot: high -= 1    # pivot 보다 작은 값 찾기
+        while low <= high and arr[low] <= pivot: low += 1       # pivot 보다 큰 값 찾기
+        # while high > start and arr[high] >= pivot: high -= 1   # pivot 보다 작은 값 찾기
+        while low <= high and arr[high] >= pivot: high -= 1  # pivot 보다 작은 값 찾기
 
         # 만약 low와 high가 교차하지 않았으면 low와 high의 값을 서로 교환
         if low < high:
@@ -27,7 +28,7 @@ for _ in range(50):
   quick_sort(arr, 0, len(arr) - 1)
   print('정렬 후  :', arr, arr == sorted(arr))
 
-# arr = [69, 10, 30, 2, 16, 8, 31, 22]
+# arr = [47, 52, 18, 60, 47, 66, 26, 48]
 # print('정렬 전  :', arr)
 # quick_sort(arr, 0, len(arr) - 1)
 # print('정렬 후  :', arr)
