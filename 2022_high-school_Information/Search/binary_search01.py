@@ -1,16 +1,15 @@
-def binary_search(arr, target):
+def binary_search(nums, find_num):
     low = 0
-    high = len(arr) - 1
+    high = len(nums) - 1
 
     while low <= high:
         mid = (low + high) // 2
-        if arr[mid] == target:
+        if nums[mid] == find_num:
             return mid
-        elif arr[mid] > target:
+        elif nums[mid] > find_num:
             high = mid - 1
         else:
             low = mid + 1
-
     return -1
 
 arr = [1, 2, 3, 4, 5, 6, 7, 10]
