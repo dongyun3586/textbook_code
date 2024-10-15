@@ -1,9 +1,10 @@
 import random
 
+
 class Player:
     def __init__(self, name=None):
         self.name = name
-        self.numbers = random.sample(range(10), 3)   # 3 개의 랜덤 야구 숫자 생성
+        self.numbers = random.sample(range(10), 3)  # 3 개의 랜덤 야구 숫자 생성
         print(f'{self.name} : {self.numbers}')
 
     def check_strike(self, guessed_nums):
@@ -15,6 +16,7 @@ class Player:
                 ball_count += 1
         print(f"{strike_count} Strike, {ball_count} Ball")
         return strike_count == 3
+
 
 class Game:
     def __init__(self, players):
@@ -38,7 +40,8 @@ class Game:
 
     def check_gameover(self, game_result):
         if sum(game_result):
-            print(f"\n\n{'<GAME OVER>':^40}"); print('=' * 40)
+            print(f"\n\n{'<GAME OVER>':^40}");
+            print('=' * 40)
             for i in range(len(game_result)):
                 if game_result[i]:
                     print(f'{self.players[i].name} Win!')
@@ -51,7 +54,7 @@ if __name__ == "__main__":
     n = int(input("게임 참가자 숫자는?"))
     players = []
     for i in range(n):
-        name = input(f"{i+1}번째 참가자 이름 입력: ")
+        name = input(f"{i + 1}번째 참가자 이름 입력: ")
         players.append(Player(name))
     game = Game(players)
     game.play()

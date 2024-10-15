@@ -1,16 +1,12 @@
 import random
 
 class Player:
-    """ 숫자 야구 게임의 플레이어 클래스
-    각 플레이어는 고유한 이름, 3개의 랜덤 숫자를 속성으로 갖고,
-    check_strike() 함수로 모든 숫자를 맞힌 결과를 반환함."""
     def __init__(self, name=None):
         self.name = name
         self.numbers = random.sample(range(10), 3)   # player의 3 개의 랜덤 야구 숫자 생성
         print(f"{self.name}: {self.numbers}")
 
     def check_strike(self, guessed_nums) -> bool:
-        """ guessed_nums에서 strike와 ball의 개수를 체크하고, 모든 숫자를 맞힌 결과를 반환함. """
         strike_count = ball_count = 0
         for i in range(3):
             if guessed_nums[i] == self.numbers[i]:

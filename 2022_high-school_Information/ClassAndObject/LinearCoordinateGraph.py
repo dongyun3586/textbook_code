@@ -32,12 +32,26 @@ class LinearGraph:
         print('모든 좌표간의 거리: ', self.length)
 
 
-if __name__ == '__main__':
+def get_input_from_the_user():
     graph = LinearGraph()
     n = int(input("2차원 좌표의 개수 입력: "))
-
     for i in range(n):
         x, y = map(int, input("x y 좌표 입력: ").split())
+        graph.points.append(Point2D(x, y))
+
+    # 모든 좌표를 연결하는 그래프 출력
+    graph.draw_linear_graph()
+
+    # 모든 좌표의 거리 계산
+    graph.calculate_distance()
+
+
+if __name__ == '__main__':
+    # get_input_from_the_user()
+    graph = LinearGraph()
+    points = [(0, 0), (1, 2), (2, 0), (3, 2), (4, 0)]
+    for p in points:
+        x, y = p
         graph.points.append(Point2D(x, y))
 
     # 모든 좌표를 연결하는 그래프 출력
